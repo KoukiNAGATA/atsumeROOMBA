@@ -435,8 +435,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 162045801}
-  - component: {fileID: 162045800}
   - component: {fileID: 162045799}
+  - component: {fileID: 162045800}
+  - component: {fileID: 162045802}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -465,10 +466,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 162045798}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c95215ff705b45a3a5c499c2d933376, type: 3}
+  m_Script: {fileID: 11500000, guid: 44cf28dbfb95a451d8dfc2b48b831de0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   countdownLabel: {fileID: 69194874}
+  countdown: {fileID: 1325879599}
 --- !u!4 &162045801
 Transform:
   m_ObjectHideFlags: 0
@@ -483,6 +485,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &162045802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 162045798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee941da4d427241b793d665a42c82dca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timebar: {fileID: 1442809049}
 --- !u!1 &183475975
 GameObject:
   m_ObjectHideFlags: 0
@@ -1132,8 +1147,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4284184831
+  m_fontColor: {r: 1, g: 0.47058824, b: 0.35686275, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

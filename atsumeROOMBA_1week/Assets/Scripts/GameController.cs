@@ -21,9 +21,15 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Debug用
+        Count.Subscribe(x => Debug.Log(x));
+        State.Subscribe(x => Debug.Log(x));
+
         _state.Value = GameState.Init;
         StartCoroutine("GameFlow");
     }
+
+
 
     private IEnumerator GameFlow()
     {
@@ -37,7 +43,11 @@ public class GameController : MonoBehaviour
 
         //Playing
         _state.Value = GameState.Playing;
-        yield return new WaitForSeconds(50);
+        for (int count = 60; count > 10; count--)
+        {
+            _count.Value = count;
+            yield return new WaitForSeconds(1);
+        }
 
         //PlayingCountdown
         _state.Value = GameState.PlayingCountdown;
