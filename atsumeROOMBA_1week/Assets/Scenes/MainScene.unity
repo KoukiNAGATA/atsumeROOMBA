@@ -2422,7 +2422,7 @@ GameObject:
   - component: {fileID: 1907433830}
   - component: {fileID: 1907433831}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: PowerGauge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
