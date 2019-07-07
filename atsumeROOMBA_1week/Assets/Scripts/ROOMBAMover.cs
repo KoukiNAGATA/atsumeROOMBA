@@ -7,6 +7,7 @@ public class ROOMBAMover : MonoBehaviour
 {
     public Rigidbody rb;
     private bool _pushed;//スペースキーが押されているかの判定
+    private bool _game;//スタート時の判定
     public const float MAX = 15.0f;
     float power = MAX;//ルンバのMAX充電時走行可能時間
     Slider _gauge;//充電ゲージ
@@ -16,6 +17,15 @@ public class ROOMBAMover : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         _gauge = GameObject.Find("PowerGauge").GetComponent<Slider>();
+        //3秒動作を止める  
+        StartCoroutine("WaitForStart");
+    }
+
+    private IEnumerator WaitForStart()
+    {
+        _pushed = false;
+        yield return new WaitForSeconds(3.0f);
+        _game = true;
     }
 
     // Update is called once per frame
@@ -31,15 +41,18 @@ public class ROOMBAMover : MonoBehaviour
             _pushed = false;
         }
 
-        // 毎フレーム毎に充電を減らしていく
-        power -= Time.deltaTime;
-        if (power <= 0)//充電がなくなったら5秒止める
+        if (_game)
         {
-            // コルーチンを実行  
-            StartCoroutine("NoPower");
+            // 毎フレーム毎に充電を減らしていく
+            power -= Time.deltaTime;
+            if (power <= 0)//充電がなくなったら5秒止める
+            {
+                // コルーチンを実行  
+                StartCoroutine("NoPower");
+            }
+            // 充電ゲージに値を設定
+            _gauge.value = power;
         }
-        // 充電ゲージに値を設定
-        _gauge.value = power;
     }
 
     private IEnumerator NoPower()
