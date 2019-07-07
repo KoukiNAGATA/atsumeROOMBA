@@ -16,7 +16,7 @@ public class Countdown : MonoBehaviour
     {
         GameController gc = GetComponent<GameController>();
 
-        gc.Count.Subscribe(count => countdownLabel.text = count > 0 ? count.ToString() : gc.StateValue == GameState.Countdown ? "Go" : "Finish");
+        gc.Count.Subscribe(count => countdownLabel.text = count > 0 ? count.ToString() : gc.StateValue == GameState.Countdown ? "Go!" : "Fin");
         gc.State.Subscribe(state =>
         {
             if (state == GameState.Countdown || state == GameState.PlayingCountdown)
