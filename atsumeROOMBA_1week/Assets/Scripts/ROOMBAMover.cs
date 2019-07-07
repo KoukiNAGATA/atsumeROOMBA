@@ -65,7 +65,8 @@ public class ROOMBAMover : MonoBehaviour
     void OnTriggerStay(Collider col)//充電エリアとの当たり判定
     {
         //衝突したオブジェクトがEnergyAreaだった場合
-        if(power >= MAX){
+        if (power >= MAX)
+        {
         }
         else if (col.gameObject.tag == "EnergyArea")
         {
