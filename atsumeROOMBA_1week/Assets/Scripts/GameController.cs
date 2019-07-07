@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
+    private int TIME = 15;
+
     public int CountValue => _count.Value;
     internal GameState StateValue => _state.Value;
     public bool DisableValue { get => _disable.Value; set => _disable.Value = value; } 
@@ -43,7 +45,7 @@ public class GameController : MonoBehaviour
 
         //Playing
         _state.Value = GameState.Playing;
-        for (int count = 60; count > 10; count--)
+        for (int count = TIME; count > 10; count--)
         {
             _count.Value = count;
             yield return new WaitForSeconds(1);

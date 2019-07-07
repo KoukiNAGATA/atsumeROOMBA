@@ -9,15 +9,18 @@ public class TimeBar : MonoBehaviour
     [SerializeField]
     private Slider timebar;
 
+    private float TIME = 15f;
+
     private float time;
     private bool onPlay = false;
+
 
     void Start()
     {
         GameController gc = GetComponent<GameController>();
         gc.State.Where(state => state == GameState.Playing).Subscribe(_ => {
                 onPlay = true;
-                time = 60f;
+                time = TIME;
             });
         gc.State.Where(state => state == GameState.Finish).Subscribe(_ => onPlay = false);
     }
@@ -27,7 +30,7 @@ public class TimeBar : MonoBehaviour
         if (onPlay)
         {
             time -= Time.deltaTime;
-            timebar.value = time / 60f;
+            timebar.value = time / TIME;
         }
     }
 }
