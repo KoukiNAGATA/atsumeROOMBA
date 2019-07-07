@@ -16,6 +16,20 @@ public class ROOMBAMover : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         _gauge = GameObject.Find("PowerGauge").GetComponent<Slider>();
+        //スタートまで3秒止める
+        StartCoroutine("WaitForStart");
+    }
+
+    private IEnumerator WaitForStart()
+    {
+        yield return new WaitForSeconds(3.0f);
+    }
+
+    private IEnumerator NoPower()
+    {
+        _pushed = false;
+        yield return new WaitForSeconds(5.0f);
+        power = MAX;
     }
 
     // Update is called once per frame
@@ -40,13 +54,6 @@ public class ROOMBAMover : MonoBehaviour
         }
         // 充電ゲージに値を設定
         _gauge.value = power;
-    }
-
-    private IEnumerator NoPower()
-    {
-        _pushed = false;
-        yield return new WaitForSeconds(5.0f);
-        power = MAX;
     }
 
     void OnTriggerStay(Collider col)//充電エリアとの当たり判定
