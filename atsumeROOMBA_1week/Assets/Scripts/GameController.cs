@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    private int TIME = 15;
+    private int TIME = 30;
 
     public int CountValue => _count.Value;
     internal GameState StateValue => _state.Value;
@@ -26,6 +26,7 @@ public class GameController : MonoBehaviour
         //Debug用
         Count.Subscribe(x => Debug.Log(x));
         State.Subscribe(x => Debug.Log(x));
+        Disable.Subscribe(x => Debug.Log(x));
 
         _state.Value = GameState.Init;
         StartCoroutine("GameFlow");
