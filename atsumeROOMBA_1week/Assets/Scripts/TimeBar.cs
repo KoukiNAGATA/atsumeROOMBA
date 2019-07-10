@@ -9,7 +9,7 @@ public class TimeBar : MonoBehaviour
     [SerializeField]
     private Slider timebar;
 
-    private float TIME = 15f;
+    private float TIME = 60f;
 
     private float time;
     private bool onPlay = false;

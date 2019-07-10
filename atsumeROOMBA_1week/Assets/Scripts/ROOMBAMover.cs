@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class ROOMBAMover : MonoBehaviour
 {
+
     public Rigidbody rb;
     private bool _pushed;//スペースキーが押されているかの判定
     private bool _game;//スタート時の判定
