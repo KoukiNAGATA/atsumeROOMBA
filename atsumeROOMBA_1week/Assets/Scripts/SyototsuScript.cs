@@ -6,7 +6,8 @@ using TMPro;
 
 public class SyototsuScript : MonoBehaviour
     {
-        public TextMeshProUGUI ScoreText;
+    //public TextMeshProUGUI ScoreText;
+        public GameController gc;
         public ParticleSystem particle5;
         public ParticleSystem particle10;
         public ParticleSystem particle20;
@@ -19,7 +20,8 @@ public class SyototsuScript : MonoBehaviour
         void Start()
         {
             score = 0;
-            ScoreText.text = score.ToString();
+            gc.Score.Value = 0;
+            //ScoreText.text = score.ToString();
         }
 
         // Update is called once per frame
@@ -61,6 +63,7 @@ public class SyototsuScript : MonoBehaviour
         void SetCountText()
         {
             // スコアの表示を更新
-            ScoreText.text = score.ToString();
+            gc.Score.Value = score;
+            //ScoreText.text = score.ToString();
         }
 }
