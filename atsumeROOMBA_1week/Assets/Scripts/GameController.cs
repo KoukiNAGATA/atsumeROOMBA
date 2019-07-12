@@ -23,6 +23,15 @@ public class GameController : MonoBehaviour
     [System.NonSerialized]
     public IntReactiveProperty Score = new IntReactiveProperty();
 
+    [System.NonSerialized]
+    public IntReactiveProperty Bottle = new IntReactiveProperty();
+
+    [System.NonSerialized]
+    public IntReactiveProperty Box = new IntReactiveProperty();
+
+    [System.NonSerialized]
+    public IntReactiveProperty Desk = new IntReactiveProperty();
+
     // Start is called before the first frame update
     void Start()
     {

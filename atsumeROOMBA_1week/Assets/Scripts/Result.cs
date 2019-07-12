@@ -19,12 +19,12 @@ public class Result : MonoBehaviour
         gc.State.Where(state => state == GameState.Init).Subscribe(state => result.SetActive(false));
         gc.State.Where(state => state == GameState.Result).Subscribe(state => {
             result.SetActive(true);
-            resultMessage.text = template(10,0,0,50);
+            resultMessage.text = template(gc.Bottle.Value, gc.Box.Value, gc.Desk.Value, gc.Score.Value);
         });
     }
 
-    string template(int bin, int box, int desk, int score)
+    string template(int bottle, int box, int desk, int score)
     {
-        return "けっか\nあきびん：" + bin + "\nあきばこ：" + box + "\nもくざい：" + desk + "\n\nとくてん：" + score + "てん";
+        return "けっか\nあきびん：" + bottle + " こ\nあきばこ：" + box + " こ\nもくざい：" + desk + " こ\n\nとくてん：" + score + "てん";
     }
 }
