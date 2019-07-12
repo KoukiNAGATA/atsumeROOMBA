@@ -13,7 +13,7 @@ public class EnergyAreaGenerater : MonoBehaviour
     void Start()
     {
         //床を取得する
-        floor = GameObject.Find("Plane");
+        floor = GameObject.Find("Floor");
         Vector3 floorsize = floor.GetComponent<Renderer>().bounds.size;
         // プレハブを取得
         area = (GameObject)Resources.Load("EnergyArea");
