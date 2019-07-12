@@ -20,18 +20,30 @@ public class GameController : MonoBehaviour
     private BoolReactiveProperty _disable = new BoolReactiveProperty();
     internal IReadOnlyReactiveProperty<bool> Disable => _disable;
 
+    [System.NonSerialized]
+    public IntReactiveProperty Score = new IntReactiveProperty();
+
+    [System.NonSerialized]
+    public IntReactiveProperty Bottle = new IntReactiveProperty();
+
+    [System.NonSerialized]
+    public IntReactiveProperty Box = new IntReactiveProperty();
+
+    [System.NonSerialized]
+    public IntReactiveProperty Desk = new IntReactiveProperty();
+
     // Start is called before the first frame update
     void Start()
     {
         //Debug用
-        Count.Subscribe(x => Debug.Log(x));
-        State.Subscribe(x => Debug.Log(x));
-        Disable.Subscribe(x => Debug.Log(x));
+        Count.Subscribe(x => Debug.Log("count: " + x));
+        State.Subscribe(x => Debug.Log("state: " + x));
+        Disable.Subscribe(x => Debug.Log("disable: " + x));
+        Score.Subscribe(x => Debug.Log("score: " + x));
 
         _state.Value = GameState.Init;
         StartCoroutine("GameFlow");
     }
-
 
 
     private IEnumerator GameFlow()
