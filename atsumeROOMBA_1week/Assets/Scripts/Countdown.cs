@@ -23,8 +23,6 @@ public class Countdown : MonoBehaviour
 
         gc.Count.Subscribe(count => countdownLabel.text = count > 0 ? count.ToString() : gc.StateValue == GameState.Countdown ? "Go!" : "Fin");
         gc.Count.Subscribe(count => countdownOnBarLabel.text = count > 0 ? count.ToString() : gc.StateValue == GameState.Countdown ? "Go!" : "Fin");
-        //gc.Count.Where(count => count == 0 && gc.StateValue == GameState.PlayingCountdown)
-                //.Subscribe(_ => countdown.GetComponent<Image>().color = new Color(255, 255, 255, 1));
 
         gc.State.Where(state => state == GameState.PlayingCountdown).Subscribe(_ => countdown.SetActive(true));
 
