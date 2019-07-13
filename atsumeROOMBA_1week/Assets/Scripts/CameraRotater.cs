@@ -24,6 +24,6 @@ public class CameraRotater : MonoBehaviour
         ROOMBAPos = player.transform.position;
 
         // ルンバの位置のY軸を中心に、カメラを回転（公転）させる
-        transform.RotateAround(ROOMBAPos, Vector3.up, horizontalInput * Time.deltaTime * 200f);
+        transform.RotateAround(ROOMBAPos, Vector3.up, horizontalInput * Time.deltaTime * 100f);
     }
 }
