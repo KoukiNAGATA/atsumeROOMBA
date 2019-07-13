@@ -13,6 +13,9 @@ public class ROOMBAMover : MonoBehaviour
     float power = MAX;//ルンバのMAX充電時走行可能時間
     Slider _gauge;//充電ゲージ
 
+    [SerializeField]
+    private GameController gc;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -58,9 +61,11 @@ public class ROOMBAMover : MonoBehaviour
 
     private IEnumerator NoPower()
     {
+        gc.Disable.Value = true;
         _pushed = false;
         yield return new WaitForSeconds(5.0f);
         power = MAX;
+        gc.Disable.Value = false;
     }
 
     void OnTriggerStay(Collider col)//充電エリアとの当たり判定
