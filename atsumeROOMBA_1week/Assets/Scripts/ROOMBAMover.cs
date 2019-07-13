@@ -49,7 +49,7 @@ public class ROOMBAMover : MonoBehaviour
         {
             // 毎フレーム毎に充電を減らしていく
             power -= Time.deltaTime;
-            if (power <= 0)//充電がなくなったら5秒止める
+            if (power <= 0 && gc.StateValue != GameState.Result)//充電がなくなったら5秒止める
             {
                 // コルーチンを実行  
                 StartCoroutine("NoPower");

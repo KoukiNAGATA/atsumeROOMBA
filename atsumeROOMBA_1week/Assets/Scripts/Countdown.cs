@@ -16,7 +16,6 @@ public class Countdown : MonoBehaviour
     [SerializeField]
     private GameObject countdownOnBar;
 
-
     void Start()
     {
         GameController gc = GetComponent<GameController>();
