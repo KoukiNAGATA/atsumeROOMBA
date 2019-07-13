@@ -13,8 +13,6 @@ public class ScoreLabel : MonoBehaviour
     {
         scoreLabel.text = 0.ToString();
         GameController gc = GetComponent<GameController>();
-        GetComponent<GameController>().Score.Subscribe(x => {
-            scoreLabel.text = x.ToString();
-        });
+        GetComponent<GameController>().Score.Where(_ => gc.StateValue != GameState.Result).Subscribe(x => scoreLabel.text = x.ToString());
     }
 }

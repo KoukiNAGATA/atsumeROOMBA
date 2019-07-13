@@ -22,7 +22,7 @@ public class CreateTrashScript : MonoBehaviour
             // インスタンス生成
             GameObject bottle = Instantiate(Bottle1_2) as GameObject;
             // ランダムな場所に配置
-            bottle.transform.position = new Vector3(Random.Range(-45, 45), 1, Random.Range(-45, 45));
+            bottle.transform.position = new Vector3(Random.Range(-12.5f, 12.5f), 1, Random.Range(-12.5f, 12.5f));
             bottle.transform.rotation = Quaternion.Euler(Random.Range(0, 180), Random.Range(0, 359), 0);
         }
 
@@ -31,7 +31,7 @@ public class CreateTrashScript : MonoBehaviour
             // インスタンス生成
             GameObject box = Instantiate(Cerial_2) as GameObject;
             // ランダムな場所に配置
-            box.transform.position = new Vector3(Random.Range(-45, 45), 1, Random.Range(-45, 45));
+            box.transform.position = new Vector3(Random.Range(-12.5f, 12.5f), 1, Random.Range(-12.5f, 12.5f));
             box.transform.rotation = Quaternion.Euler(Random.Range(0, 180), Random.Range(0, 359), 0);
         }
 
@@ -40,7 +40,7 @@ public class CreateTrashScript : MonoBehaviour
             // インスタンス生成
             GameObject desk = Instantiate(Desks) as GameObject;
             // ランダムな場所に配置
-            desk.transform.position = new Vector3(Random.Range(-45, 45), 1, Random.Range(-45, 45));
+            desk.transform.position = new Vector3(Random.Range(-12.5f, 12.5f), 1, Random.Range(-12.5f, 12.5f));
             desk.transform.rotation = Quaternion.Euler(Random.Range(0, 180), Random.Range(0, 359), 0);
         }
 

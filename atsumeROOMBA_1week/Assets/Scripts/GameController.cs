@@ -5,11 +5,10 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    private int TIME = 30;
+    private int TIME = 60;
 
     public int CountValue => _count.Value;
     internal GameState StateValue => _state.Value;
-    public bool DisableValue { get => _disable.Value; set => _disable.Value = value; } 
 
     private IntReactiveProperty _count = new IntReactiveProperty();
     public IReadOnlyReactiveProperty<int> Count => _count;
@@ -17,20 +16,20 @@ public class GameController : MonoBehaviour
     private ReactiveProperty<GameState> _state = new ReactiveProperty<GameState>();
     internal IReadOnlyReactiveProperty<GameState> State => _state;
 
-    private BoolReactiveProperty _disable = new BoolReactiveProperty();
-    internal IReadOnlyReactiveProperty<bool> Disable => _disable;
+    [System.NonSerialized]
+    public BoolReactiveProperty Disable = new BoolReactiveProperty(false);
 
     [System.NonSerialized]
-    public IntReactiveProperty Score = new IntReactiveProperty();
+    public IntReactiveProperty Score = new IntReactiveProperty(0);
 
     [System.NonSerialized]
-    public IntReactiveProperty Bottle = new IntReactiveProperty();
+    public IntReactiveProperty Bottle = new IntReactiveProperty(0);
 
     [System.NonSerialized]
-    public IntReactiveProperty Box = new IntReactiveProperty();
+    public IntReactiveProperty Box = new IntReactiveProperty(0);
 
     [System.NonSerialized]
-    public IntReactiveProperty Desk = new IntReactiveProperty();
+    public IntReactiveProperty Desk = new IntReactiveProperty(0);
 
     // Start is called before the first frame update
     void Start()
